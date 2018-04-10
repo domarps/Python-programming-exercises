@@ -36,3 +36,34 @@ import libAttrib as Attrib  # imports libAttrib from build dir
 import libDetect as Detect  # imports libDetect from build dir
 sys.path.insert(0, BASE_PATH + '/app')
 ```
+
+- python supports floating point division by default
+
+```python
+5 / 2 # 2.5
+5 // 2 # 2 (we use two backslashes)
+```
+- The python `range` mini-bootcamp (no xrange from python3), `range` is a memory-efficient iterator:
+
+```python
+range(3) # does not create a list, rather than an iterator, default starts from 0
+a = list(range(3)) # converts iterator to List
+list(range(1, len(a))) # output : [1,2]
+```
+
+- Easy way to detect python python version
+
+```python
+import platform
+version = platform.python_version_tuple()  #version[0] == '2' or version[0] == '3'
+```
+
+- Confirm tensorflow can actually see the GPU
+
+```python
+import tensorflow as tf
+device_name = tf.test.gpu_device_name()
+if device_name != '/device:GPU:0':
+  raise SystemError('GPU device not found')
+print('Found GPU at: {}'.format(device_name))
+```
