@@ -67,3 +67,43 @@ if device_name != '/device:GPU:0':
   raise SystemError('GPU device not found')
 print('Found GPU at: {}'.format(device_name))
 ```
+
+- Keyword arguments vs positional arguments:
+```
+# positional arguments
+def test(a,b,c):
+     print(a)
+     print(b)
+     print(c)
+
+test(1,2,3)
+#output:
+1
+2
+3
+
+# keyword arguments
+def test(a=0,b=0,c=0):
+     print(a)
+     print(b)
+     print(c)
+     print('-------------------------')
+
+test(a=1,b=2,c=3)
+#output :
+1
+2
+3
+-------------------------
+```
+
+- Use of `*` operator in function call
+```
+def sum(a,b):  #receive args from function calls as sum(1,2) or sum(a=1,b=2)
+    print(a+b)
+
+# Unpack data structure of list or tuple or dict into arguments with help of '*' operator
+sum(*my_tuple)   # becomes same as sum(1,2) after unpacking my_tuple with '*'
+sum(*my_list)    # becomes same as sum(1,2) after unpacking my_list with  '*'
+sum(**my_dict)   # becomes same as sum(a=1,b=2) after unpacking by '**' NOTE!!!
+```
