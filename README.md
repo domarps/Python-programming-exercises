@@ -107,3 +107,10 @@ sum(*my_tuple)   # becomes same as sum(1,2) after unpacking my_tuple with '*'
 sum(*my_list)    # becomes same as sum(1,2) after unpacking my_list with  '*'
 sum(**my_dict)   # becomes same as sum(a=1,b=2) after unpacking by '**' NOTE!!!
 ```
+
+- Use of throwaway variables in python3
+```
+test_tensor = np.random.randn(3,2,4,5)
+_,arg1, arg2, arg3 = test_tensor.shape
+*_, arg2, arg3 = test_tensor.shape
+```
