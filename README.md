@@ -114,3 +114,26 @@ test_tensor = np.random.randn(3,2,4,5)
 _,arg1, arg2, arg3 = test_tensor.shape
 *_, arg2, arg3 = test_tensor.shape
 ```
+
+
+- *Reshaping in numpy* :The input x has shape (N, d_1, ..., d_k) and contains a minibatch of N examples
+, where each example x[i] has shape (d_1, ..., d_k). We will reshape each input
+into a vector of dimension D = d_1 * ... * d_k, and then transform it
+to an output vector of dimension M.
+
+```python
+num_inputs = 2
+input_shape = (4, 5, 6)
+output_dim = 3
+
+input_size = num_inputs * np.prod(input_shape)
+weight_size = output_dim * np.prod(input_shape)
+
+# *input_shape unpacks the tuple data structure into arguments needed by the function definition
+x = np.linspace(-0.1, 0.5, num=input_size).reshape(num_inputs, *input_shape)
+w = np.linspace(-0.2, 0.3, num=weight_size).reshape(np.prod(input_shape), output_dim)
+b = np.linspace(-0.3, 0.1, num=output_dim)
+
+
+input = x.reshape(x.shape[0], -1)
+```
