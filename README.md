@@ -137,3 +137,18 @@ b = np.linspace(-0.3, 0.1, num=output_dim)
 
 input = x.reshape(x.shape[0], -1)
 ```
+
+- PathLib 
+
+```python
+from pathlib import Path
+
+p = Path('data/lsun/')
+[x for x in p.iterdir() if x.is_dir()]
+```
+
+- `Length` of the generator
+
+```python
+sum(1 for _ in gen_obj)
+```
