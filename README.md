@@ -3,6 +3,12 @@
 Some over-used verses during the first few months of my New Grad ML Engineering role :
 
 
+- Reversing a List
+
+```python
+listA = listB[::-1]
+```
+
 - List comprehension
 
 ```python
