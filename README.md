@@ -3,6 +3,18 @@
 Some over-used verses during the first few months of my New Grad ML Engineering role :
 
 
+- Base64 decode, gzip decompress (De-serialization)
+
+```python
+import numpy as np
+import base64, gzip
+
+feature = "H4sIAKhfy1sC/ztmf8aGaV6lPQDZfSSQCAAAAA==" #change-me
+zipped = base64.b64decode(feature)
+unzipped = gzip.decompress(zipped)
+decoded = np.frombuffer(unzipped, dtype=np.float32)
+```
+
 - Reversing a List
 
 ```python
